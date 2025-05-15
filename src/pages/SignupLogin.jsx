@@ -11,7 +11,7 @@ const SignupLogin=function(){
    const login=async()=>{
       console.log(formData);
      
-      const response=await fetch('http://localhost:4000/login',{
+      const response=await fetch('https://e-commerce-8waw.onrender.com/login',{
          method:'POST',
          headers:{
             Accept:'Application/json',
@@ -32,7 +32,7 @@ const SignupLogin=function(){
    const signup=async()=>{
       console.log(formData);
       let responseData;
-      await fetch('http://localhost:4000/signup',{
+      await fetch('https://e-commerce-8waw.onrender.com/signup',{
          method:'POST',
          headers:{
             Accept:'Application/json',

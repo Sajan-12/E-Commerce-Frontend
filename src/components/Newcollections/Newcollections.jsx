@@ -5,7 +5,7 @@ import "./Newcollections.css";
 const Newcollections = () => {
   const [newcollections,setNewCollection]=useState([]);
    useEffect(()=>{
-       fetch('http://localhost:4000/newcollection')
+       fetch('https://e-commerce-8waw.onrender.com/newcollection')
       .then((resp)=>resp.json()).then((data)=>{
         setNewCollection(data)});
    },[]);

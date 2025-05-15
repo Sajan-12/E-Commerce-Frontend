@@ -14,12 +14,12 @@ const ShopContextProvider=(props)=>{
       const [all_Product,setAllProduct]=useState([]);
 
       useEffect(()=>{
-            fetch('http://localhost:4000/products')
+            fetch('https://e-commerce-8waw.onrender.com/products')
             .then((response)=>response.json())
              .then((data)=>{setAllProduct(data.products)});
              
              if(localStorage.getItem('auth-token')){
-                  fetch('http://localhost:4000/getcartitem',{
+                  fetch('https://e-commerce-8waw.onrender.com/getcartitem',{
                         method:'POST',
                         headers:{
                               Accept:'application/json',
@@ -51,7 +51,7 @@ const ShopContextProvider=(props)=>{
       const addToCart=(itemId)=>{
             setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
             if(localStorage.getItem('auth-token')){
-                  fetch('http://localhost:4000/addtocart',{
+                  fetch('https://e-commerce-8waw.onrender.com/addtocart',{
                         method:'POST',
                         headers:{
                               Accept:'application/json',
@@ -67,7 +67,7 @@ const ShopContextProvider=(props)=>{
       const removeFromCart=(itemId)=>{
             setCartItems((prev)=>({...prev,[itemId]:(prev[itemId]===0?0:prev[itemId]-1)}));
             if(localStorage.getItem('auth-token')){
-                  fetch('http://localhost:4000/removefromcart',{
+                  fetch('https://e-commerce-8waw.onrender.com/removefromcart',{
                         method:'POST',
                         headers:{
                               Accept:'application/json',

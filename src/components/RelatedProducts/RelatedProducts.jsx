@@ -8,7 +8,7 @@ const RelatedProducts = () => {
        const[relatedData,setRelatedData]=useState(related_data);
        
        useEffect(()=>{
-        fetch(`http://localhost:4000/relatedproduct/${productId}`).then((response)=>response.json())
+        fetch(`https://e-commerce-8waw.onrender.com/relatedproduct/${productId}`).then((response)=>response.json())
         .then((data)=>{
          setRelatedData(data)}
        );
