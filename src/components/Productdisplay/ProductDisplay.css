@@ -106,7 +106,12 @@
 .displayproduct-right-category span{
     font-weight: 700;
 }
-
+.like,#reviews,#star{
+   cursor: pointer;
+}
+#rating{
+    font-size: 18px;
+}
 @media(max-width: 1280px){
     .productdisplay{
         margin: 0px 60px;

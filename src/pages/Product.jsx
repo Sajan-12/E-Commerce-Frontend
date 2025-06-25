@@ -18,6 +18,7 @@ const Product=function(){
        <ProductDisplay product={product} />
        <DescriptionBox/>
        <RelatedProducts/>
+       
     </div>
  )
 }

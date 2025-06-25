@@ -3,7 +3,7 @@ import "./CSS/SignupLogin.css";
 const SignupLogin=function(){
    const [state,setState]=useState('Login');
    const [formData,setFormData]=useState({
-     username:"",email:"",password:""
+     name:"",email:"",password:""
    });
    function onChangeHandler(e){
       setFormData({...formData,[e.target.name]:e.target.value})
@@ -52,7 +52,7 @@ const SignupLogin=function(){
       <div className="loginsignup-container">
          <h1>{state}</h1>
          <div className="loginsignup-fields">
-            {(state==='Sign Up')? <input name="username" value={formData.username} onChange={onChangeHandler} type="text" placeholder="Your Name" />:<></>}
+            {(state==='Sign Up')? <input name="name" value={formData.name} onChange={onChangeHandler} type="text" placeholder="Your Name" />:<></>}
             <input name='email' value={formData.email} onChange={onChangeHandler} type="email" placeholder="Your Email" />
             <input name='password' value={formData.password} onChange={onChangeHandler} type="password" placeholder="Password" /> 
          </div>
@@ -60,9 +60,9 @@ const SignupLogin=function(){
          <button onClick={()=>{(state=='Login')?login():signup()}}>Continue</button>
             {
                (state==='Login')? <p className="loginsignup-login">Create an account? 
-               <span onClick={()=>setState('Sign Up')}>Login here</span></p>:
+               <span onClick={()=>setState('Sign Up')}>Sign Up</span></p>:
                <p className="loginsignup-login">Already have an account?
-                <span onClick={()=>setState('Login')}>Click here</span></p>
+                <span onClick={()=>setState('Login')}>Login</span></p>
             }
          <div className="loginsignup-agree">
             <input type="checkbox"/>

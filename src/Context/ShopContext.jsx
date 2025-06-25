@@ -19,15 +19,15 @@ const ShopContextProvider=(props)=>{
              .then((data)=>{setAllProduct(data.products)});
              
              if(localStorage.getItem('auth-token')){
-                  fetch('https://e-commerce-8waw.onrender.com/getcartitem',{
-                        method:'POST',
+                  fetch('https://e-commerce-8waw.onrender.com/getcartitems',{
+                        method:'GET',
                         headers:{
                               Accept:'application/json',
                               'auth-token':`${localStorage.getItem('auth-token')}`,
                               'Content-Type':'application/json'
                         },
-                        body:""
-                  }).then((resp)=>resp.json()).then((data)=>setCartItems(data));
+                  }).then((resp)=>resp.json()).then((data)=>{
+                       if (data.cartData)  setCartItems(data.cartData)});
              }
          },[]);
 
@@ -60,7 +60,7 @@ const ShopContextProvider=(props)=>{
                         },
                         body:JSON.stringify({'itemId':itemId})
                   }).then((response)=>response.json()).then((data)=>
-                  console.log(data));
+                  console.log(data.msg));
 
             }
       }
@@ -76,7 +76,7 @@ const ShopContextProvider=(props)=>{
                         },
                         body:JSON.stringify({'itemId':itemId})
                   }).then((response)=>response.json()).then((data)=>
-                  console.log(data));
+                  console.log(data.msg));
 
             }
       }
