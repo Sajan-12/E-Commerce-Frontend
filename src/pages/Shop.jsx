@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useRef} from "react";
 import Hero from "../components/Hero/Hero";
 import Popular from "../components/Popular/Popular";
 import Offers from "../components/Offers/Offers";
@@ -6,12 +6,18 @@ import Newcollections from "../components/Newcollections/Newcollections";
 import NewsLetter from "../components/NewsLetter/NewsLetter";
 
 const Shop=function(){
+   const newCollectionRef = useRef(null); 
+  const scrollToNewCollection = () => {
+    newCollectionRef.current?.scrollIntoView({ behavior: 'smooth' }); 
+  };
  return (
     <div>
-    <Hero/>
+    <Hero onNewCollectionClick={scrollToNewCollection}/>
     <Popular/>
     <Offers/>
-    <Newcollections/>
+    <div ref={newCollectionRef}> 
+        <Newcollections/>
+      </div>
     <NewsLetter/>
     </div>
  )

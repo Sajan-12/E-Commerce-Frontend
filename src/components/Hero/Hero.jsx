@@ -1,9 +1,9 @@
 import React from 'react';
 import hand_icon from "../Assets/Frontend_Assets/hand_icon.png";
 import arrow_icon from "../Assets/Frontend_Assets/arrow.png";
-import hero_image from "../Assets/Frontend_Assets/hero_image.png";
+import hero_image from "../Assets/Frontend_Assets/hero.png";
 import "./Hero.css";
-const Hero = () => {
+const Hero = ({ onNewCollectionClick }) => {
   return (
     <div className='hero'>
       <div className="hero-left">
@@ -23,7 +23,7 @@ const Hero = () => {
                   
      </div>
       <div className="hero-latest-btn">
-        <div>Latest Collection</div>
+        <div onClick={()=>{onNewCollectionClick()}}>Latest Collection</div>
         <img src={arrow_icon} alt=""></img>
       </div>
 

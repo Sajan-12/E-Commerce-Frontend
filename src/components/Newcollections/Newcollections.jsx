@@ -10,7 +10,7 @@ const Newcollections = () => {
         setNewCollection(data)});
    },[]);
   return (
-    <div className='new-collections'>
+    <div  className='new-collections'>
         <h1>NEW COLLECTIONS</h1>
         <hr></hr>
         <div className='collections'>

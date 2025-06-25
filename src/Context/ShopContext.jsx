@@ -48,6 +48,8 @@ const ShopContextProvider=(props)=>{
           }
           return totalItems;
       }
+
+     
       const addToCart=(itemId)=>{
             setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
             if(localStorage.getItem('auth-token')){
@@ -80,7 +82,7 @@ const ShopContextProvider=(props)=>{
 
             }
       }
-      console.log(all_Product);
+      //console.log(all_Product);
       const contextValue={getTotalCartItems,getToatlAmount,all_Product,cartItems,addToCart,removeFromCart};
       //console.log(cartItems);
    
